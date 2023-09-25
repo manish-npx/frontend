@@ -1,0 +1,18 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1691499824719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1691499824719,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"react-login-typescript\",\n  \"private\": true,\n  \"version\": \"0.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"lint\": \"eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0\",\n    \"preview\": \"vite preview\"\n  },\n  \"dependencies\": {\n    \"@popperjs/core\": \"^2.11.8\",\n    \"@reduxjs/toolkit\": \"^1.9.5\",\n    \"@tanstack/react-query\": \"^4.32.6\",\n    \"@testing-library/jest-dom\": \"^5.17.0\",\n    \"@testing-library/react\": \"^13.4.0\",\n    \"@testing-library/user-event\": \"^13.5.0\",\n    \"@total-typescript/ts-reset\": \"^0.4.2\",\n    \"@types/jest\": \"^27.5.2\",\n    \"@types/node\": \"^20.4.8\",\n    \"@types/react\": \"^18.2.19\",\n    \"@types/react-dom\": \"^18.2.7\",\n    \"axios\": \"^1.4.0\",\n    \"bootstrap\": \"^5.3.1\",\n    \"feather-icons\": \"^4.29.0\",\n    \"formik\": \"^2.4.3\",\n    \"pure-react-carousel\": \"^1.30.1\",\n    \"react\": \"^18.2.0\",\n    \"react-bootstrap\": \"^2.8.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"react-loading-skeleton\": \"^3.3.1\",\n    \"react-redux\": \"^8.1.2\",\n    \"react-router-dom\": \"^6.14.2\",\n    \"react-step-builder\": \"^3.0.6\",\n    \"react-step-progress-bar\": \"^1.0.3\",\n    \"react-step-wizard\": \"^5.3.11\",\n    \"react-toastify\": \"^9.1.3\",\n    \"vitest\": \"^0.32.4\",\n    \"web-vitals\": \"^2.1.4\",\n    \"yup\": \"^1.2.0\",\n    \"zod\": \"^3.21.4\",\n    \"zustand\": \"^4.4.1\"\n  },\n  \"devDependencies\": {\n    \"@types/react\": \"^18.0.37\",\n    \"@types/react-dom\": \"^18.0.11\",\n    \"@types/uuid\": \"^9.0.2\",\n    \"@typescript-eslint/eslint-plugin\": \"^5.62.0\",\n    \"@typescript-eslint/parser\": \"^5.62.0\",\n    \"@vitejs/plugin-react-swc\": \"^3.3.2\",\n    \"eslint\": \"^8.46.0\",\n    \"eslint-plugin-react-hooks\": \"^4.6.0\",\n    \"eslint-plugin-react-refresh\": \"^0.3.5\",\n    \"typescript\": \"^5.1.6\",\n    \"vite\": \"^4.4.9\"\n  }\n}\n"
+        }
+    ]
+}

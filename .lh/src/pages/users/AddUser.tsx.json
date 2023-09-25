@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/users/AddUser.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690374294445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690374299809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import { Card, Col, Row } from \"react-bootstrap\";\n import AddStepWizard from \"./AddStepWizard\";\n \n export type AddUserProps = {\n     name: string\n"
+                }
+            ],
+            "date": 1690374294445,
+            "name": "Commit-0",
+            "content": "import { Card, Col, Row } from \"react-bootstrap\";\nimport AddStepWizard from \"./AddStepWizard\";\n\nexport type AddUserProps = {\n    name: string\n}\n\nexport const AddUser: React.FC<AddUserProps> = ({ name }: AddUserProps) => {\n\n    console.log('name', { name })\n\n    return (\n        <>\n            <AddStepWizard />\n\n\n        </>\n\n    )\n};\n\n\nexport default AddUser;"
+        }
+    ]
+}

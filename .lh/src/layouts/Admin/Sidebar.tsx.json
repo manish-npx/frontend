@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/layouts/Admin/Sidebar.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690461087998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690461758463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n                             />\n                         ))}\n \n                         <li>\n-                            <Link className='' to=\"/login\" onClick={logOut}><i className={`ti ti-user me-2`}></i> Logout</Link>\n+                            <Link className='' to=\"/login\" onClick={logOut}><i className={`ti ti-brand-gravatar me-2`}></i> Logout</Link>\n                         </li>\n                     </Nav.Item>\n \n                 </div>\n"
+                }
+            ],
+            "date": 1690461087998,
+            "name": "Commit-0",
+            "content": "import React, { useState } from 'react';\nimport { Nav } from 'react-bootstrap';\nimport { Link, useNavigate } from 'react-router-dom';\nimport { MENU } from '../../constants/menuBarNameConstant';\nimport MenuItem from './MenuItem';\nimport { logout } from '../../services/auth.service';\n\n\nexport interface IMenuItem {\n    name: string;\n    icon?: string;\n    path?: string;\n    children?: Array<IMenuItem>;\n}\n\nconst Sidebar: React.FC = () => {\n\n\n\n    const navigate = useNavigate();\n    const logOut = () => {\n\n        logout();\n        navigate('/login')\n    }\n\n\n    return (\n        <>\n\n            <Nav id=\"sidebar\" className=\"sidebar-wrapper sidebar-dark\" >\n                <div className=\"sidebar-content\" data-simplebar style={{ height: \"calc(100% - 60px)\" }}>\n                    <div className=\"sidebar-brand\">\n                        <Link to='/'>\n                            <span className=\"sidebar-colored\">\n                                <img src=\"assets/images/logo-light.png\" height=\"24\" alt=\"\" />\n                            </span>\n                        </Link>\n                    </div>\n\n                    <Nav.Item className=\"sidebar-menu\">\n\n                        {MENU.map((menuItem: IMenuItem) => (\n                            <MenuItem\n                                key={menuItem.name + menuItem.path}\n                                menuItem={menuItem}\n                            />\n                        ))}\n\n                        <li>\n                            <Link className='' to=\"/login\" onClick={logOut}><i className={`ti ti-user me-2`}></i> Logout</Link>\n                        </li>\n                    </Nav.Item>\n\n                </div>\n\n            </Nav >\n\n\n        </>\n    );\n};\n\nexport default Sidebar;\n"
+        }
+    ]
+}

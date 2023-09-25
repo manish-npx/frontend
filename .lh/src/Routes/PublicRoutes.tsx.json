@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/Routes/PublicRoutes.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1690567114565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690567119815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n                 <Route path='/' element={<Home />} />\n                 <Route path='/login' element={<Login />} />\n                 <Route path='/register' element={<Register />} />\n                 <Route path='/about' element={<About />} />\n+                <Route path='/anime' element={<About />} />\n                 <Route path=\"*\" element={<Navigate to=\"/404\" />} />\n \n             </Routes>\n \n"
+                },
+                {
+                    "date": 1690567266523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import About from '../pages/About'\n import Profile from '../pages/users/Profile'\n import Dashboard from '../pages/Dashboard'\n import AddUser from '../pages/users/AddUser'\n+import Anime from '../pages/Anime'\n \n \n const PublicRoutes: React.FC = () => {\n     return (\n"
+                },
+                {
+                    "date": 1690567273476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\n-import { Route, Routes } from 'react-router-dom'\n+import { Navigate, Route, Routes } from 'react-router-dom'\n import { PrivateRoute } from './PrivateRoute'\n import Home from '../pages/Home'\n import Login from '../pages/Login'\n import Register from '../pages/Register'\n"
+                },
+                {
+                    "date": 1690568313319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import Profile from '../pages/users/Profile'\n import Dashboard from '../pages/Dashboard'\n import AddUser from '../pages/users/AddUser'\n import Anime from '../pages/Anime'\n+import Page404 from '../errors/404'\n \n \n const PublicRoutes: React.FC = () => {\n     return (\n@@ -25,9 +26,10 @@\n                 <Route path='/login' element={<Login />} />\n                 <Route path='/register' element={<Register />} />\n                 <Route path='/about' element={<About />} />\n                 <Route path='/anime' element={<Anime />} />\n-                <Route path=\"*\" element={<Navigate to=\"/404\" />} />\n+                <Route path='/404' element={<Page404 />} />\n+                <Route path=\"*\" element={<Navigate to='/404' />} />\n \n             </Routes>\n \n         </>\n"
+                },
+                {
+                    "date": 1690819528617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n import Dashboard from '../pages/Dashboard'\n import AddUser from '../pages/users/AddUser'\n import Anime from '../pages/Anime/AnimeList'\n import Page404 from '../errors/404'\n+import AnimeDetail from '../components/AnimeDetail'\n \n \n const PublicRoutes: React.FC = () => {\n     return (\n"
+                }
+            ],
+            "date": 1690567114565,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Route, Routes } from 'react-router-dom'\nimport { PrivateRoute } from './PrivateRoute'\nimport Home from '../pages/Home'\nimport Login from '../pages/Login'\nimport Register from '../pages/Register'\nimport About from '../pages/About'\nimport Profile from '../pages/users/Profile'\nimport Dashboard from '../pages/Dashboard'\nimport AddUser from '../pages/users/AddUser'\n\n\nconst PublicRoutes: React.FC = () => {\n    return (\n        <>\n            <Routes>\n                <Route element={<PrivateRoute />}>\n                    <Route path=\"/dashboard\" element={<Dashboard />} />\n                    <Route path=\"/user\" element={<Profile />} />\n                    <Route path=\"/add-user\" element={<AddUser name='Add User' />} />\n                </Route>\n\n                <Route path='/' element={<Home />} />\n                <Route path='/login' element={<Login />} />\n                <Route path='/register' element={<Register />} />\n                <Route path='/about' element={<About />} />\n                <Route path=\"*\" element={<Navigate to=\"/404\" />} />\n\n            </Routes>\n\n        </>\n    )\n}\n\nexport default PublicRoutes\n"
+        }
+    ]
+}

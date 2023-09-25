@@ -1,0 +1,38 @@
+{
+    "sourceFile": "vite.config.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1690885918294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690885946122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { defineConfig } from 'vite'\n import react from '@vitejs/plugin-react-swc'\n-const path = require('path')\n+import path from 'path'\n \n+const path =\n+\n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n   root: path.resolve(__dirname, 'src'),\n"
+                },
+                {
+                    "date": 1690886093893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { defineConfig } from 'vite'\n import react from '@vitejs/plugin-react-swc'\n-import path from 'path'\n-\n+import path from 'path';\n+const filePath = path.resolve(__dirname, 'src');\n const path =\n \n // https://vitejs.dev/config/\n export default defineConfig({\n"
+                },
+                {
+                    "date": 1690886120293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,13 @@\n import { defineConfig } from 'vite'\n import react from '@vitejs/plugin-react-swc'\n import path from 'path';\n const filePath = path.resolve(__dirname, 'src');\n-const path =\n \n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n-  root: path.resolve(__dirname, 'src'),\n+  root: filePath,\n   resolve: {\n     alias: {\n       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),\n     }\n"
+                },
+                {
+                    "date": 1690886218329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,9 @@\n \n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n-  root: filePath,\n-  resolve: {\n-    alias: {\n-      '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),\n-    }\n-  },\n+\n   server: {\n     proxy: {\n       \"/api\": {\n         target: \"http://localhost:5000\",\n"
+                },
+                {
+                    "date": 1690886230369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import { defineConfig } from 'vite'\n import react from '@vitejs/plugin-react-swc'\n-import path from 'path';\n-const filePath = path.resolve(__dirname, 'src');\n \n+\n // https://vitejs.dev/config/\n export default defineConfig({\n   plugins: [react()],\n \n"
+                }
+            ],
+            "date": 1690885918294,
+            "name": "Commit-0",
+            "content": "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react-swc'\nconst path = require('path')\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n  root: path.resolve(__dirname, 'src'),\n  resolve: {\n    alias: {\n      '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),\n    }\n  },\n  server: {\n    proxy: {\n      \"/api\": {\n        target: \"http://localhost:5000\",\n        changeOrigin: true\n      },\n    },\n  },\n})\n"
+        }
+    ]
+}

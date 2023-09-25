@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/pages/Dashboard.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1690291024754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690291030011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react'\n import { Container } from 'react-bootstrap';\n+import Wizard from './users/AddStepWizard';\n \n const Dashboard: React.FC = () => {\n \n     console.log('Dashboard')\n"
+                },
+                {
+                    "date": 1690374217681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,8 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n-            <Wizard />\n \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1690374239524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n+            <Wizard />\n \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1690374262968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\n import { Container } from 'react-bootstrap';\n-import Wizard from './users/AddStepWizard';\n+import AddStepWizard from './users/AddStepWizard';\n \n const Dashboard: React.FC = () => {\n \n     console.log('Dashboard')\n@@ -13,9 +13,9 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n-            <Wizard />\n+            <AddStepWizard />\n \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1690374277083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,8 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n-            <AddStepWizard />\n-\n         </>\n     )\n }\n \n"
+                },
+                {
+                    "date": 1690380496215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react'\n import { Container } from 'react-bootstrap';\n+import Wizard from './users/AddStepWizard';\n \n const Dashboard: React.FC = () => {\n \n     console.log('Dashboard')\n@@ -12,8 +13,10 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n+            <Wizard />\n+\n         </>\n     )\n }\n \n"
+                },
+                {
+                    "date": 1690380618654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import React from 'react'\n import { Container } from 'react-bootstrap';\n-import Wizard from './users/AddStepWizard';\n \n const Dashboard: React.FC = () => {\n \n     console.log('Dashboard')\n@@ -13,9 +12,8 @@\n                     <h1>DashBoard</h1>\n                 </Container>\n             </section>\n \n-            <Wizard />\n \n         </>\n     )\n }\n"
+                }
+            ],
+            "date": 1690291024754,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Container } from 'react-bootstrap';\n\nconst Dashboard: React.FC = () => {\n\n    console.log('Dashboard')\n    return (\n        <>\n            <section className='section'>\n                <Container>\n\n                    <h1>DashBoard</h1>\n                </Container>\n            </section>\n\n            <Wizard />\n\n        </>\n    )\n}\n\nexport default Dashboard\n"
+        }
+    ]
+}

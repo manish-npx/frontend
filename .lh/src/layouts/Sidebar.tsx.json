@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/layouts/Sidebar.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1690375434999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690375598058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,13 @@\n                                 key={menuItem.name + menuItem.path}\n                                 menuItem={menuItem}\n                             />\n                         ))}\n+                        <li>\n+                            <NavLink className=\"nav-link\" to={`${item.path}`}>\n+                                <p>{(item.name)}</p>\n+                            </NavLink>\n+                        </li>\n                     </Nav.Item>\n \n                 </div>\n \n"
+                },
+                {
+                    "date": 1690375609708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                             />\n                         ))}\n                         <li>\n                             <NavLink className=\"nav-link\" to={`${item.path}`}>\n-                                <p>{(item.name)}</p>\n+                                <p>Logout</p>\n                             </NavLink>\n                         </li>\n                     </Nav.Item>\n \n"
+                },
+                {
+                    "date": 1690375619517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n                                 menuItem={menuItem}\n                             />\n                         ))}\n                         <li>\n-                            <NavLink className=\"nav-link\" to={`${item.path}`}>\n+                            <NavLink className=\"nav-link\" to='/logout'>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n                     </Nav.Item>\n"
+                },
+                {
+                    "date": 1690375677614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n                             />\n                         ))}\n                         <li>\n                             <NavLink className=\"nav-link\" to='/logout'>\n+                                <i className={`ti ti-${menuItem.icon} me-2`}></i>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n                     </Nav.Item>\n"
+                },
+                {
+                    "date": 1690375684039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                             />\n                         ))}\n                         <li>\n                             <NavLink className=\"nav-link\" to='/logout'>\n-                                <i className={`ti ti-${menuItem.icon} me-2`}></i>\n+                                <i className={`ti ti-user me-2`}></i>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n                     </Nav.Item>\n"
+                },
+                {
+                    "date": 1690375697823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                             />\n                         ))}\n                         <li>\n                             <NavLink className=\"nav-link\" to='/logout'>\n-                                <i className={`ti ti-user me-2`}></i>\n+                                <i className='ti ti-user me-2'></i>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n                     </Nav.Item>\n"
+                },
+                {
+                    "date": 1690378967851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n                         </Link>\n                     </div>\n \n                     <Nav.Item className=\"sidebar-menu\">\n+                        \n                         {MENU.map((menuItem: IMenuItem) => (\n                             <MenuItem\n                                 key={menuItem.name + menuItem.path}\n                                 menuItem={menuItem}\n"
+                },
+                {
+                    "date": 1690380323999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState } from 'react';\n import { Nav } from 'react-bootstrap';\n-import { Link, NavLink } from 'react-router-dom';\n+import { Link, NavLink, useNavigate } from 'react-router-dom';\n import { MENU } from '../constants/menuBarNameConstant';\n import MenuItem from './MenuItem';\n \n \n@@ -11,9 +11,16 @@\n     path?: string;\n     children?: Array<IMenuItem>;\n }\n \n+const navigate = useNavigate();\n \n+const logOut = () => {\n+\n+    logout();\n+    navigate('/login')\n+}\n+\n const Sidebar: React.FC = () => {\n \n     return (\n         <>\n"
+                },
+                {
+                    "date": 1690380332543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { Nav } from 'react-bootstrap';\n import { Link, NavLink, useNavigate } from 'react-router-dom';\n import { MENU } from '../constants/menuBarNameConstant';\n import MenuItem from './MenuItem';\n+import { logout } from '../services/auth.service';\n \n \n export interface IMenuItem {\n     name: string;\n"
+                },
+                {
+                    "date": 1690380362992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n                             />\n                         ))}\n \n                         <li>\n-                            <NavLink className=\"nav-link\" to='/logout'>\n+                            <NavLink className=\"nav-link\" to='#' onClick={logOut}>\n                                 <i className='ti ti-user me-2'></i>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n"
+                },
+                {
+                    "date": 1690380372697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n                             />\n                         ))}\n \n                         <li>\n-                            <NavLink className=\"nav-link\" to='#' onClick={logOut()}>\n+                            <NavLink className=\"nav-link\" to='#' onClick={logOut}>\n                                 <i className='ti ti-user me-2'></i>\n                                 <p>Logout</p>\n                             </NavLink>\n                         </li>\n"
+                }
+            ],
+            "date": 1690375434999,
+            "name": "Commit-0",
+            "content": "import React, { useState } from 'react';\nimport { Nav } from 'react-bootstrap';\nimport { Link, NavLink } from 'react-router-dom';\nimport { MENU } from '../constants/menuBarNameConstant';\nimport MenuItem from './MenuItem';\n\n\nexport interface IMenuItem {\n    name: string;\n    icon?: string;\n    path?: string;\n    children?: Array<IMenuItem>;\n}\n\n\nconst Sidebar: React.FC = () => {\n\n    return (\n        <>\n\n            <Nav id=\"sidebar\" className=\"sidebar-wrapper sidebar-dark\" >\n                <div className=\"sidebar-content\" data-simplebar style={{ height: \"calc(100% - 60px)\" }}>\n                    <div className=\"sidebar-brand\">\n                        <Link to='/'>\n                            <span className=\"sidebar-colored\">\n                                <img src=\"assets/images/logo-light.png\" height=\"24\" alt=\"\" />\n                            </span>\n                        </Link>\n                    </div>\n\n                    <Nav.Item className=\"sidebar-menu\">\n                        {MENU.map((menuItem: IMenuItem) => (\n                            <MenuItem\n                                key={menuItem.name + menuItem.path}\n                                menuItem={menuItem}\n                            />\n                        ))}\n                    </Nav.Item>\n\n                </div>\n\n            </Nav >\n\n\n        </>\n    );\n};\n\nexport default Sidebar;\n"
+        }
+    ]
+}

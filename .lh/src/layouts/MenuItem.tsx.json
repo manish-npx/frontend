@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/layouts/MenuItem.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690375514927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690375575855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import  { useEffect, useState } from 'react';\n+import { useEffect, useState } from 'react';\n import { NavLink, useNavigate, useLocation, Location, Link } from 'react-router-dom';\n import { IMenuItem } from './Sidebar';\n \n const MenuItem = ({ menuItem }: { menuItem: IMenuItem }) => {\n"
+                }
+            ],
+            "date": 1690375514927,
+            "name": "Commit-0",
+            "content": "import  { useEffect, useState } from 'react';\nimport { NavLink, useNavigate, useLocation, Location, Link } from 'react-router-dom';\nimport { IMenuItem } from './Sidebar';\n\nconst MenuItem = ({ menuItem }: { menuItem: IMenuItem }) => {\n    const [isMenuExtended, setIsMenuExtended] = useState(false);\n    const [isExpandable, setIsExpandable] = useState(false);\n    const [isMainActive, setIsMainActive] = useState(false);\n    const [isOneOfChildrenActive, setIsOneOfChildrenActive] = useState(false);\n\n    const navigate = useNavigate();\n    const location = useLocation();\n\n    const toggleMenu = () => {\n        setIsMenuExtended(!isMenuExtended);\n        setIsOneOfChildrenActive(!isOneOfChildrenActive);\n\n    };\n\n    const handleMainMenuAction = () => {\n        if (isExpandable) {\n            toggleMenu();\n            return;\n        }\n        navigate(menuItem.path ? menuItem.path : '/');\n    };\n\n    const calculateIsActive: (url: Location) => void = (url: Location) => {\n        setIsMainActive(false);\n        setIsOneOfChildrenActive(false);\n        if (isExpandable && menuItem && menuItem.children) {\n            menuItem.children.forEach((item) => {\n                if (item.path === url.pathname) {\n                    setIsOneOfChildrenActive(true);\n                    setIsMenuExtended(true);\n                }\n            });\n        } else if (menuItem.path === url.pathname) {\n            setIsMainActive(true);\n        }\n    };\n\n    useEffect(() => {\n        if (location) {\n            calculateIsActive(location);\n        }\n    }, [location, isExpandable, menuItem]);\n\n    useEffect(() => {\n        if (!isMainActive && !isOneOfChildrenActive) {\n            setIsMenuExtended(false);\n        }\n    }, [isMainActive, isOneOfChildrenActive]);\n\n    useEffect(() => {\n        setIsExpandable(\n            Boolean(menuItem && menuItem.children && menuItem.children.length > 0)\n        );\n    }, [menuItem]);\n\n    return (\n        <>\n            {Boolean(menuItem && menuItem.children && menuItem.children.length > 0) ?\n\n                <li className={`sidebar-dropdown ${isMenuExtended ? 'active' : ''}`}>\n                    <a role=\"link\" onClick={handleMainMenuAction} style={{ cursor: 'pointer' }} >\n                        <i className={`ti ti-${menuItem.icon} me-2`}></i>\n                        <p>{(menuItem.name)}</p>\n                    </a>\n\n                    {isExpandable && menuItem && menuItem.children && menuItem.children.map((item) => (\n                        <div className={`sidebar-submenu  ${isMainActive || isOneOfChildrenActive ? 'd-block' : ''}`}>\n                            <ul key={item.name}>\n                                <li>\n                                    <NavLink className=\"nav-link\" to={`${item.path}`}>\n                                        <p>{(item.name)}</p>\n                                    </NavLink>\n                                </li>\n                            </ul>\n                        </div>\n                    ))}\n                </li>\n\n                : <li><Link to={`${menuItem.path}`}><i className={`ti ti-${menuItem.icon} me-2`}></i>{(menuItem.name)}</Link></li>\n            }\n        </>\n    );\n};\n\nexport default MenuItem;\n"
+        }
+    ]
+}

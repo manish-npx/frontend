@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/pages/users/Step2.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1690303720810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690303727666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react'\n \n-const Step1: React.FC = () => {\n+const Step2: React.FC = () => {\n     return (\n         <>\n \n         </>\n     )\n }\n \n-export default Step1\n+export default Step2\n"
+                },
+                {
+                    "date": 1690303765632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n const Step2: React.FC = () => {\n     return (\n         <>\n+            <h1>Step-2</h1>\n \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1690303847006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,31 @@\n const Step2: React.FC = () => {\n     return (\n         <>\n             <h1>Step-2</h1>\n-\n+            <div className=\"form\">\n+                <label htmlFor=\"fname\">First Name:</label>\n+                <input\n+                    id=\"fname\"\n+                    name=\"fname\"\n+                    value={user.fname}\n+                    onChange={handleChange}\n+                />\n+                <label htmlFor=\"lname\">Last Name:</label>\n+                <input\n+                    id=\"lname\"\n+                    name=\"lname\"\n+                    value={user.lname}\n+                    onChange={handleChange}\n+                />\n+                <label htmlFor=\"email\">Email:</label>\n+                <input\n+                    id=\"email\"\n+                    name=\"email\"\n+                    value={user.email}\n+                    onChange={handleChange}\n+                />\n+            </div>\n         </>\n     )\n }\n \n"
+                },
+                {
+                    "date": 1690304097898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\n \n-const Step2: React.FC = () => {\n+const Step2: React.FC = ({ user, handleChange }) => {\n     return (\n         <>\n             <h1>Step-2</h1>\n             <div className=\"form\">\n"
+                },
+                {
+                    "date": 1690304164851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n import React from 'react'\n \n+interface IStepProp{\n+    user: string;\n+    handleChange: JSX.Element;\n+}\n+\n const Step2: React.FC = ({ user, handleChange }) => {\n     return (\n         <>\n             <h1>Step-2</h1>\n"
+                },
+                {
+                    "date": 1690304199174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\n \n interface IStepProp {\n-    user: string;\n+    user: {};\n     handleChange: JSX.Element;\n }\n \n const Step2: React.FC = ({ user, handleChange }) => {\n"
+                },
+                {
+                    "date": 1690304217293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\n \n interface IStepProp {\n-    user: {};\n+    user: IUser;\n     handleChange: JSX.Element;\n }\n \n const Step2: React.FC = ({ user, handleChange }) => {\n"
+                }
+            ],
+            "date": 1690303720810,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nconst Step1: React.FC = () => {\n    return (\n        <>\n\n        </>\n    )\n}\n\nexport default Step1\n"
+        }
+    ]
+}

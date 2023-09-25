@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Slider.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1691414470002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691414475571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import React from 'react'\n \n const Slider = () => {\n     return (\n         <>\n"
+                },
+                {
+                    "date": 1691414498328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+// Import Swiper React components\n+import { Swiper, SwiperSlide } from 'swiper/react';\n+\n+// Import Swiper styles\n+import 'swiper/css';\n+\n+const Slider = () => {\n+    return (\n+        <>\n+            <Swiper\n+                spaceBetween={50}\n+                slidesPerView={3}\n+                onSlideChange={() => console.log('slide change')}\n+                onSwiper={(swiper) => console.log(swiper)}\n+            >\n+                <SwiperSlide>Slide 1</SwiperSlide>\n+                <SwiperSlide>Slide 2</SwiperSlide>\n+                <SwiperSlide>Slide 3</SwiperSlide>\n+                <SwiperSlide>Slide 4</SwiperSlide>\n+                ...\n+            </Swiper>\n+        </>\n+    )\n+}\n+\n+export default Slider\n"
+                }
+            ],
+            "date": 1691414470002,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nconst Slider = () => {\n  return (\n    <div>\n      \n    </div>\n  )\n}\n\nexport default Slider\n"
+        }
+    ]
+}

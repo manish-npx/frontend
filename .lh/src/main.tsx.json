@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/main.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1690293115220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690293125628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,14 @@\n \n \n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n   <React.StrictMode>\n+    <StepsProvider>\n+\n     <BrowserRouter>\n       <App />\n     </BrowserRouter>\n+    </StepsProvider>,\n \n+\n   </React.StrictMode>,\n )\n"
+                },
+                {
+                    "date": 1690886524740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,20 +6,20 @@\n //import { Provider } from 'react-redux';\n import { Provider } from 'react-redux/es/exports'\n import { store } from './app/store.ts'\n import \"bootstrap/dist/css/bootstrap.min.css\";\n+import \"bootstrap/dist/js/bootstrap.min.js\";\n import { StepsProvider } from \"react-step-builder\";\n \n \n \n \n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n   <React.StrictMode>\n     <StepsProvider>\n-\n-    <BrowserRouter>\n-      <App />\n-    </BrowserRouter>\n+      <BrowserRouter>\n+        <App />\n+      </BrowserRouter>\n     </StepsProvider>,\n \n \n   </React.StrictMode>,\n"
+                },
+                {
+                    "date": 1690886553648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n //import { Provider } from 'react-redux';\n import { Provider } from 'react-redux/es/exports'\n import { store } from './app/store.ts'\n import \"bootstrap/dist/css/bootstrap.min.css\";\n-import \"bootstrap/dist/js/bootstrap.min.js\";\n import { StepsProvider } from \"react-step-builder\";\n \n \n \n"
+                },
+                {
+                    "date": 1690886564388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n import { StepsProvider } from \"react-step-builder\";\n \n \n \n-\n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n   <React.StrictMode>\n     <StepsProvider>\n       <BrowserRouter>\n"
+                },
+                {
+                    "date": 1690886572868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,13 @@\n \n \n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n   <React.StrictMode>\n+\n     <StepsProvider>\n       <BrowserRouter>\n         <App />\n       </BrowserRouter>\n     </StepsProvider>,\n \n-\n   </React.StrictMode>,\n )\n"
+                },
+                {
+                    "date": 1690886583915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n \n \n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n+\n   <React.StrictMode>\n \n     <StepsProvider>\n       <BrowserRouter>\n"
+                },
+                {
+                    "date": 1691495258338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,18 +7,29 @@\n import { Provider } from 'react-redux/es/exports'\n import { store } from './app/store.ts'\n //import \"bootstrap/dist/css/bootstrap.min.css\";\n import { StepsProvider } from \"react-step-builder\";\n+import {\n+  useQuery,\n+  useMutation,\n+  useQueryClient,\n+  QueryClient,\n+  QueryClientProvider,\n+} from '@tanstack/react-query'\n \n+// Create a client\n+const queryClient = new QueryClient()\n \n \n ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n \n   <React.StrictMode>\n \n     <StepsProvider>\n       <BrowserRouter>\n+        <QueryClientProvider client={queryClient}>\n         <App />\n+        </QueryClientProvider>\n       </BrowserRouter>\n     </StepsProvider>,\n \n   </React.StrictMode>,\n"
+                },
+                {
+                    "date": 1691495270832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,9 @@\n import { Provider } from 'react-redux/es/exports'\n import { store } from './app/store.ts'\n //import \"bootstrap/dist/css/bootstrap.min.css\";\n import { StepsProvider } from \"react-step-builder\";\n-import {\n-  useQuery,\n-  useMutation,\n-  useQueryClient,\n-  QueryClient,\n-  QueryClientProvider,\n-} from '@tanstack/react-query'\n+import { QueryClient,  QueryClientProvider,} from '@tanstack/react-query'\n \n // Create a client\n const queryClient = new QueryClient()\n \n"
+                }
+            ],
+            "date": 1690293115220,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport ReactDOM from 'react-dom/client'\nimport App from './App.tsx'\nimport './index.css'\nimport { BrowserRouter } from \"react-router-dom\";\n//import { Provider } from 'react-redux';\nimport { Provider } from 'react-redux/es/exports'\nimport { store } from './app/store.ts'\nimport \"bootstrap/dist/css/bootstrap.min.css\";\nimport { StepsProvider } from \"react-step-builder\";\n\n\n\n\nReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(\n  <React.StrictMode>\n    <BrowserRouter>\n      <App />\n    </BrowserRouter>\n\n  </React.StrictMode>,\n)\n"
+        }
+    ]
+}

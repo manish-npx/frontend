@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/components/ImageSlider.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1691415926979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691415948205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from \"react\";\n // Import React slick components\n-import Slider from \"react-slick\";\n \n \n // Import React slick  styles\n import \"~slick-carousel/slick/slick.css\";\n import \"~slick-carousel/slick/slick-theme.css\";\n+import Slider from 'react-slick';\n \n \n const ImageSlider: React.FC = () => {\n     return (\n"
+                },
+                {
+                    "date": 1691415958581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from \"react\";\n // Import React slick components\n+import Slider from 'react-slick';\n \n \n // Import React slick  styles\n import \"~slick-carousel/slick/slick.css\";\n import \"~slick-carousel/slick/slick-theme.css\";\n-import Slider from 'react-slick';\n \n \n const ImageSlider: React.FC = () => {\n     return (\n"
+                },
+                {
+                    "date": 1691416289208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,9 @@\n import React from \"react\";\n-// Import React slick components\n-import Slider from 'react-slick';\n+// Import React carousel components\n+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';\n+import 'pure-react-carousel/dist/react-carousel.es.css';\n \n-\n-// Import React slick  styles\n-import \"~slick-carousel/slick/slick.css\";\n-import \"~slick-carousel/slick/slick-theme.css\";\n-\n-\n const ImageSlider: React.FC = () => {\n     return (\n         <>\n             <Slider\n"
+                },
+                {
+                    "date": 1691416350826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,20 +6,22 @@\n \n const ImageSlider: React.FC = () => {\n     return (\n         <>\n-            <Slider\n-                spaceBetween={50}\n-                slidesPerView={3}\n-                onSlideChange={() => console.log('slide change')}\n-                onSwiper={(swiper) => console.log(swiper)}\n-            >\n-                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></SwiperSlide>\n-                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></SwiperSlide>\n-                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></SwiperSlide>\n-                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></SwiperSlide>\n+            <CarouselProvider\n+                naturalSlideWidth={100}\n+                naturalSlideHeight={125}\n+                totalSlides={3}\n+            >        <Slider>\n+\n+                <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n+                <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></Slide>\n+                <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></Slide>\n+                <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n                 ...\n             </Slider>\n+            </CarouselProvider>\n+\n         </>\n     )\n }\n \n"
+                },
+                {
+                    "date": 1691416371969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n                 naturalSlideHeight={125}\n                 totalSlides={3}\n             >        <Slider>\n \n-                    <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n-                    <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></Slide>\n-                    <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></Slide>\n-                    <Slide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n+                    <Slide index={1}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n+                    <Slide index={2}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></Slide>\n+                    <Slide index={3}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></Slide>\n+                    <Slide index={4}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n                     ...\n                 </Slider>\n             </CarouselProvider>\n \n"
+                },
+                {
+                    "date": 1691416378437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n                     <Slide index={1}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n                     <Slide index={2}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></Slide>\n                     <Slide index={3}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></Slide>\n                     <Slide index={4}><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></Slide>\n-                    ...\n                 </Slider>\n             </CarouselProvider>\n \n         </>\n"
+                }
+            ],
+            "date": 1691415926979,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n// Import React slick components\nimport Slider from \"react-slick\";\n\n\n// Import React slick  styles\nimport \"~slick-carousel/slick/slick.css\";\nimport \"~slick-carousel/slick/slick-theme.css\";\n\n\nconst ImageSlider: React.FC = () => {\n    return (\n        <>\n            <Slider\n                spaceBetween={50}\n                slidesPerView={3}\n                onSlideChange={() => console.log('slide change')}\n                onSwiper={(swiper) => console.log(swiper)}\n            >\n                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></SwiperSlide>\n                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg2.jpg' /></SwiperSlide>\n                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg3.jpg' /></SwiperSlide>\n                <SwiperSlide><img src='https://shreethemes.in/landrick/landing/assets/images/shop/bg1.jpg' /></SwiperSlide>\n                ...\n            </Slider>\n        </>\n    )\n}\n\nexport default Slider\n"
+        }
+    ]
+}

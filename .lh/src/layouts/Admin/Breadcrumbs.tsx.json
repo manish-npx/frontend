@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/layouts/Admin/Breadcrumbs.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690461073399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690461073399,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { ChildProp } from '../../types/commonTypes'\n\nconst Breadcrumbs: React.FC<ChildProp> = ({ children }: ChildProp): JSX.Element => {\n    return (\n        <>\n            <div className=\"container-fluid\">\n                <div className=\"layout-specing\">\n                    <div className=\"d-md-flex justify-content-between align-items-center\">\n                        <h5 className=\"mb-0\">Profile Setting</h5>\n\n                        <nav aria-label=\"breadcrumb\" className=\"d-inline-block mt-2 mt-sm-0\">\n                            <ul className=\"breadcrumb bg-transparent rounded mb-0 p-0\">\n                                <li className=\"breadcrumb-item text-capitalize\"><a href=\"/dashboard\">Limedesk</a></li>\n                                <li className=\"breadcrumb-item text-capitalize\"><a href=\"/user\">Proflie</a></li>\n                                <li className=\"breadcrumb-item text-capitalize active\" aria-current=\"page\">Setting</li>\n                            </ul>\n                        </nav>\n                    </div>\n                    {children}\n                </div>\n            </div>\n\n        </>\n    )\n}\n\nexport default Breadcrumbs\n"
+        }
+    ]
+}

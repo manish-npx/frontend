@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/navbar/NavLink.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690552046677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690552059925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \n }\n \n const AfterLoginLink = () => {\n+    return(\n     <ul className=\"buy-button list-inline mb-0\">\n         <li className=\"list-inline-item mb-0\">\n             <NavLink to=\"/dashboard\">\n                 <div className=\"btn btn-sm btn-pills btn-soft-primary\">\n@@ -36,6 +37,6 @@\n             </NavLink>\n         </li>\n     </ul>\n \n-\n+    )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690552071326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import { getCurrentUser } from \"../services/auth.service\"\n import { NavLink } from 'react-router-dom';\n \n const currentUser = getCurrentUser();\n+const logOut = () => {\n+    logout();\n+    navigate(\"/login\");\n+};\n \n const BeforeLoginLink = () => {\n     <ul className=\"buy-button list-inline mb-0\">\n         <li className=\"list-inline-item mb-0\">\n"
+                }
+            ],
+            "date": 1690552046677,
+            "name": "Commit-0",
+            "content": "import { getCurrentUser } from \"../services/auth.service\"\nimport { NavLink } from 'react-router-dom';\n\nconst currentUser = getCurrentUser();\n\nconst BeforeLoginLink = () => {\n    <ul className=\"buy-button list-inline mb-0\">\n        <li className=\"list-inline-item mb-0\">\n            <NavLink to=\"/register\">\n                <div className=\"btn btn-sm btn-pills btn-soft-primary\"> Register</div>\n            </NavLink>\n        </li>\n        <li className=\"list-inline-item ps-1 mb-0\">\n            <NavLink to=\"/login\">\n                <div className=\"btn btn-sm btn-pills btn-primary\"> Login</div>\n            </NavLink>\n        </li>\n    </ul>\n\n}\n\nconst AfterLoginLink = () => {\n    <ul className=\"buy-button list-inline mb-0\">\n        <li className=\"list-inline-item mb-0\">\n            <NavLink to=\"/dashboard\">\n                <div className=\"btn btn-sm btn-pills btn-soft-primary\">\n                    {getCurrentUser.fullName}\n                </div>\n            </NavLink>\n        </li>\n        <li className=\"list-inline-item ps-1 mb-0\">\n            <NavLink to=\"/login\" onClick={logOut}>\n                <div className=\"btn btn-sm btn-pills btn-primary\">\n                    Logout\n                </div>\n            </NavLink>\n        </li>\n    </ul>\n    \n\n}"
+        }
+    ]
+}

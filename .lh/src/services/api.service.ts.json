@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/services/api.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1690820073739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690820126563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n const authHeader = () => {\n     return { Authorization: '', };\n }\n-//https://kitsu.io/api/edge/anime/\n const API_URL = \"https://kitsu.io/api/edge/\"\n \n export const getAnime = async () => {\n \n"
+                },
+                {
+                    "date": 1691413638243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n import axios from \"axios\";\n-\n+/* \n const authHeader = () => {\n     return { Authorization: '', };\n-}\n+} */\n+\n const API_URL = \"https://kitsu.io/api/edge/\"\n \n-export const getAnime = async () => {\n+export const getAnime = async (sortGenres) => {\n+    console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime\");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres);\n };\n-export const getAnime = async () => {\n \n-    return await axios.get(API_URL + \"anime\");\n+export const getAnimeGenres = async () => {\n+\n+    return await axios.get(API_URL + \"genres\");\n };\n-\n-//return axios.get(API_URL + \"edge/trending/anime\", { headers: authHeader() });\n"
+                },
+                {
+                    "date": 1691427104551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres);\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"? page[limit] = 5 & page[offset]=0\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427125485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"? page[limit] = 5 & page[offset]=0\");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \" & page[limit] = 5 & page[offset]=0\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427133050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \" & page[limit] = 5 & page[offset]=0\");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \" & page[limit] = 10 & page[offset]=0\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427159498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \" & page[limit] = 10 & page[offset]=0\");\n+    return await axios.get(API_URL + \"anime?page[limit] = 10 & page[offset]=0 & filter[categories]=\" + sortGenres + \" \");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427166131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?page[limit] = 10 & page[offset]=0 & filter[categories]=\" + sortGenres + \" \");\n+    return await axios.get(API_URL + \"anime?page[limit] = 10 & filter[categories]=\" + sortGenres + \" \");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427171571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?page[limit] = 10 & filter[categories]=\" + sortGenres + \" \");\n+    return await axios.get(API_URL + \"anime?page[limit] = 5 & filter[categories]=\" + sortGenres + \" \");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427189946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?page[limit] = 5 & filter[categories]=\" + sortGenres + \" \");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"? page[limit] = 5 & page[offset]=0\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427204763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"& page[limit] = 5 & page[offset]=0\");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"& page[limit] = 5 & page[offset]=10\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                },
+                {
+                    "date": 1691427213437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n export const getAnime = async (sortGenres) => {\n     console.log(sortGenres, 'sortGenres')\n \n-    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"& page[limit] = 5 & page[offset]=100\");\n+    return await axios.get(API_URL + \"anime?filter[categories]=\" + sortGenres + \"& page[limit] = 50 & page[offset]=100\");\n };\n \n export const getAnimeGenres = async () => {\n \n"
+                }
+            ],
+            "date": 1690820073739,
+            "name": "Commit-0",
+            "content": "import axios from \"axios\";\n\nconst authHeader = () => {\n    return { Authorization: '', };\n}\n//https://kitsu.io/api/edge/anime/\nconst API_URL = \"https://kitsu.io/api/edge/\"\n\nexport const getAnime = async () => {\n\n    return await axios.get(API_URL + \"anime\");\n};\nexport const getAnime = async () => {\n\n    return await axios.get(API_URL + \"anime\");\n};\n\n//return axios.get(API_URL + \"edge/trending/anime\", { headers: authHeader() });\n"
+        }
+    ]
+}

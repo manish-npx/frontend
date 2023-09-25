@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/pages/users/Step1.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690303706004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690303716637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\n \n-const Step1 = () => {\n+const Step1:React.FC = () => {\n     return (\n         <>\n \n         </>\n"
+                },
+                {
+                    "date": 1690303757036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Step1: React.FC = () => {\n     return (\n         <>\n-\n+            <h1>Step-1</h1>\n         </>\n     )\n }\n \n"
+                }
+            ],
+            "date": 1690303706004,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nconst Step1 = () => {\n  return (\n    <div>\n      \n    </div>\n  )\n}\n\nexport default Step1\n"
+        }
+    ]
+}

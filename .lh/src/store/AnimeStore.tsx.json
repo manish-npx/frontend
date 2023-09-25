@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/store/AnimeStore.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1691428626350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691428639044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react'\n \n-const AnimeStore = () => {\n+const AnimeStore: React.FC = () => {\n     return (\n-        <div>\n+        <>\n \n-        </div>\n+        </>\n     )\n }\n \n export default AnimeStore\n"
+                },
+                {
+                    "date": 1691428651928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import React from 'react'\n+import create from 'zustand';\n \n+\n const AnimeStore: React.FC = () => {\n     return (\n         <>\n \n"
+                },
+                {
+                    "date": 1691428669874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from 'react'\n import create from 'zustand';\n \n \n+export const useBookStore = create();\n+\n+\n+\n const AnimeStore: React.FC = () => {\n     return (\n         <>\n \n"
+                },
+                {
+                    "date": 1691428675516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\n import create from 'zustand';\n \n \n-export const useBookStore = create();\n+export const useAnimeStore = create();\n \n \n \n const AnimeStore: React.FC = () => {\n"
+                },
+                {
+                    "date": 1691428723333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\n-import create from 'zustand';\n+import { create } from 'zustand';\n \n \n export const useAnimeStore = create();\n \n"
+                },
+                {
+                    "date": 1691428775780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import React from 'react'\n import { create } from 'zustand';\n \n+interface BearState {\n+    bears: number\n+    increase: (by: number) => void\n+}\n \n+\n export const useAnimeStore = create();\n \n \n \n"
+                },
+                {
+                    "date": 1691428796028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n import React from 'react'\n import { create } from 'zustand';\n \n-interface BearState {\n+interface AnimeState {\n     bears: number\n     increase: (by: number) => void\n }\n \n-\n+const useBearStore = create<BearState>()((set) => ({\n+    bears: 0,\n+    increase: (by) => set((state) => ({ bears: state.bears + by })),\n+}))\n export const useAnimeStore = create();\n \n \n \n"
+                },
+                {
+                    "date": 1691428824303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\n import { create } from 'zustand';\n \n interface AnimeState {\n-    bears: number\n+    anime: number\n     increase: (by: number) => void\n }\n \n const useBearStore = create<BearState>()((set) => ({\n"
+                },
+                {
+                    "date": 1691428839210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import React from 'react'\n import { create } from 'zustand';\n \n interface AnimeState {\n-    anime: number\n-    increase: (by: number) => void\n+    anime: {}\n }\n \n const useBearStore = create<BearState>()((set) => ({\n     bears: 0,\n"
+                },
+                {
+                    "date": 1691428845944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\n import { create } from 'zustand';\n \n interface AnimeState {\n-    anime: {}\n+    anime: {} | { any }\n }\n \n const useBearStore = create<BearState>()((set) => ({\n     bears: 0,\n"
+                },
+                {
+                    "date": 1691428853729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\n import { create } from 'zustand';\n \n interface AnimeState {\n-    anime: {} | { any: any }\n+    anime: {} | { any: any | string }\n }\n \n const useBearStore = create<BearState>()((set) => ({\n     bears: 0,\n"
+                },
+                {
+                    "date": 1691428877569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,11 @@\n interface AnimeState {\n     anime: {} | { any: any | string }\n }\n \n-const useBearStore = create<BearState>()((set) => ({\n-    bears: 0,\n-    increase: (by) => set((state) => ({ bears: state.bears + by })),\n-}))\n+const useBearStore = create<AnimeState>()(() => ())\n \n-export const useAnimeStore = create();\n+export const useAnimeStore = create<AnimeState>();\n \n \n \n const AnimeStore: React.FC = () => {\n"
+                }
+            ],
+            "date": 1691428626350,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nconst AnimeStore = () => {\n    return (\n        <div>\n\n        </div>\n    )\n}\n\nexport default AnimeStore\n"
+        }
+    ]
+}

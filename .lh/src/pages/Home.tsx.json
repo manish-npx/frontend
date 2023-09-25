@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/pages/Home.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1690461424718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690462084579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Home: React.FC = () => {\n   return (\n     <>\n-      <section className=\"bg-half-170 d-table w-100\">\n+      <section className=\"bg-half-170 d-table w-100\" id=\"home\">\n         <div className=\"container\">\n           <div className=\"row align-items-center\">\n             <div className=\"col-md-6\">\n               <div className=\"title-heading mt-4\">\n"
+                },
+                {
+                    "date": 1690564377465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react'\n+import HeroImage from \"assets/images/illustrator/Creativity-bro.svg\"\n \n const Home: React.FC = () => {\n   return (\n     <>\n"
+                },
+                {
+                    "date": 1690564386353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\n-import HeroImage from \"assets/images/illustrator/Creativity-bro.svg\"\n+import HeroImage from \"../assets/images/illustrator/Creativity-bro.svg\"\n \n const Home: React.FC = () => {\n   return (\n     <>\n"
+                },
+                {
+                    "date": 1690564396571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n               </div>\n             </div>\n \n             <div className=\"col-md-6\">\n-              <img src=\"https://shreethemes.in/landrick/landing/assets/images/illustrator/Creativity-bro.svg\" alt=\"\" />\n+              <img src={HeroImage} alt=\"\" />\n             </div>\n           </div>\n         </div>\n       </section>\n"
+                },
+                {
+                    "date": 1690564403450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n               </div>\n             </div>\n \n             <div className=\"col-md-6\">\n-              <img src={HeroImage} alt=\"\" />\n+              <img src={HeroImage} alt={HeroImage} />\n             </div>\n           </div>\n         </div>\n       </section>\n"
+                },
+                {
+                    "date": 1690564423955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import React from 'react'\n import HeroImage from \"../assets/images/illustrator/Creativity-bro.svg\"\n+import Layout from '../layouts/Layout'\n \n const Home: React.FC = () => {\n   return (\n     <>\n+    <Layout title='Home'>\n       <section className=\"bg-half-170 d-table w-100\" id=\"home\">\n         <div className=\"container\">\n           <div className=\"row align-items-center\">\n             <div className=\"col-md-6\">\n@@ -26,8 +28,9 @@\n             <path d=\"M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z\" fill=\"currentColor\"></path>\n           </svg>\n         </div>\n       </div>\n+      </Layout>\n     </>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1690564667253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n const Home: React.FC = () => {\n   return (\n     <>\n       <Layout title='Home'>\n+        \n         <section className=\"bg-half-170 d-table w-100\" id=\"home\">\n           <div className=\"container\">\n             <div className=\"row align-items-center\">\n               <div className=\"col-md-6\">\n"
+                }
+            ],
+            "date": 1690461424718,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nconst Home: React.FC = () => {\n  return (\n    <>\n      <section className=\"bg-half-170 d-table w-100\">\n        <div className=\"container\">\n          <div className=\"row align-items-center\">\n            <div className=\"col-md-6\">\n              <div className=\"title-heading mt-4\">\n                <h1 className=\"display-4 fw-bold mb-3\">Powerfull landing <br /> for your website</h1>\n                <p className=\"para-desc text-muted\">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap v5 html page.</p>\n              </div>\n            </div>\n\n            <div className=\"col-md-6\">\n              <img src=\"https://shreethemes.in/landrick/landing/assets/images/illustrator/Creativity-bro.svg\" alt=\"\" />\n            </div>\n          </div>\n        </div>\n      </section>\n      <div className=\"position-relative\">\n        <div className=\"shape overflow-hidden text-light\">\n          <svg viewBox=\"0 0 2880 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z\" fill=\"currentColor\"></path>\n          </svg>\n        </div>\n      </div>\n    </>\n  )\n}\n\nexport default Home\n"
+        }
+    ]
+}

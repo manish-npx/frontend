@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/Anime/AmineSliderCard.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1692703554810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1692703554810,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Link } from 'react-router-dom';\nimport { Col } from 'react-bootstrap';\n\nconst AmineSliderCard: ({ ani }: any) => JSX.Element = ({ ani }: any) => {\n\n  const animes = ani.attributes\n\n  return (\n    <>\n      <Col  className=\"col-lg-10 col-md-4 col-12 spacing picture-item rounded\" data-groups=\"branding\">\n\n        <div className=\"card shop-features rounded overflow-hidden border-0 work-container work-primary work-classic\">\n          <div className=\"card-body p-0\">\n            <Link to={'/' + animes.slug} state={{ ani }} className=\"card-title title text-dark\">\n              <img src={animes.posterImage ? animes.posterImage.medium : '#'} className=\"card-img-top rounded-top\" alt={animes.titles.en_jp} />\n            </Link>\n            <div className=\"content pt-3\">\n              <h6 className=\"mb-1\">\n                <Link to={'/' + animes.slug} state={{ ani }} className=\"card-title title text-dark\">\n                  {animes.titles.en ? animes.titles.en : (animes.titles.en_jp ? animes.titles.en_jp : animes.titles.ja_jp)}\n                </Link>\n              </h6>\n            </div>\n          </div>\n        </div>\n\n      </Col>\n      \n    </>\n  )\n}\n\nexport default AmineSliderCard\n"
+        }
+    ]
+}

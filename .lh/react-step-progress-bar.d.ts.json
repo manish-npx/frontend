@@ -1,0 +1,22 @@
+{
+    "sourceFile": "react-step-progress-bar.d.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690375106612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690375170237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+interface StepProgressProps {\n+    steps: number[];\n+    currentStep: number;\n+    onStepChange: (step: number) => void;\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1690375106612,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
